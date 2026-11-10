@@ -33,6 +33,18 @@ Both GPTs have 111,271 parameters and saw 2,572,988 next-token targets over 2,40
 1. **Late illegal prediction, 30 placements.** Black can only play **B2**. The model gives **F5** 93.66% even though F5 is empty and brackets no White discs. It gives B2 2.33%. With filtering enabled, B2 becomes the only choice and its displayed probability jumps to 100%.
 2. **Forced pass, 31 placements.** White has no legal placement, while Black can still move. The model gives the sole empty square, **F6**, 96.91% even though White cannot capture there. It gives **PASS** 2.27%. The filtered view displays PASS at 100%.
 
+## Can we read the board from the model?
+
+A separate experiment froze the GPT and trained a linear classifier to read each square from its final hidden vector. The classifier could choose among empty, mine, and theirs, relative to the player whose turn it was. It trained on positions from 4,000 training games and was scored on 94,472 positions from the 3,000 held-out games.
+
+| Readout input | Individual squares | Mean recall across classes | Entire board correct |
+| --- | ---: | ---: | ---: |
+| Most common label by square and move count | 61.00% | 53.65% | 0.00% |
+| Untrained GPT, same architecture | 64.99% | 60.33% | 3.23% |
+| Trained full-history GPT | **78.09%** | **73.21%** | **9.11%** |
+
+The trained model’s internal activity contained more readable board information than either control. The classifier identified empty squares much more reliably than the current player's discs, and it rarely reconstructed the whole board. This test measures what a classifier can read from the model. Determining whether the GPT relies on that information to choose moves would take a separate intervention. [Probe results](artifacts/probe.json) · [Prior Othello-GPT probing work](https://aclanthology.org/2023.blackboxnlp-1.2/)
+
 ## What this experiment can establish
 
-A legal move can be strategically poor. The data describes random and partly greedy play, so these results measure rule-following under those two policies. Better scores with longer history would establish that the extra information helped on this benchmark. Showing that the model internally represents the board would require a separate analysis. [Original Othello-GPT study](https://arxiv.org/abs/2210.13382)
+A legal move can be strategically poor. The data describes random and partly greedy play, so these results measure rule-following under those two policies. Better scores with longer history would establish that the extra information helped on this benchmark. [Original Othello-GPT study](https://arxiv.org/abs/2210.13382)

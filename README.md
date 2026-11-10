@@ -33,7 +33,10 @@ Run these commands from the repository root after setting up the environment abo
 .venv/bin/python -m reversi_lab.data --validate
 
 # Reproduce the benchmark using the included checkpoints
-.venv/bin/python -m reversi_lab.evaluate
+.venv/bin/python -m reversi_lab.evaluate --device cpu
+
+# Reproduce the board-state readout experiment
+.venv/bin/python -m reversi_lab.probe
 
 # Retrain both released architectures from fresh weights
 .venv/bin/python -m reversi_lab.train

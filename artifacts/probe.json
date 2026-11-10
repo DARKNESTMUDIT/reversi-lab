@@ -1,0 +1,63 @@
+{
+  "data_sha256": "51477dd4f48d560f38dabde9ad04ba70acaa47f17d308bceb3a5d90e2899d281",
+  "checkpoint_sha256": "c4053a324f0b282fbf3ba301ab708552ad004876ec2cc75fbf9d156b07f7810d",
+  "seed": 42,
+  "untrained_model_seed": 43,
+  "epochs": 6,
+  "train_games": 4000,
+  "test_games": 3000,
+  "train_positions": 125919,
+  "test_positions": 94472,
+  "classes": [
+    "empty",
+    "mine",
+    "theirs"
+  ],
+  "results": {
+    "square_and_placement_majority": {
+      "square_accuracy": 0.610013484954834,
+      "balanced_accuracy": 0.5365141816437244,
+      "recall": {
+        "empty": 0.8708280920982361,
+        "mine": 0.04103076085448265,
+        "theirs": 0.6976836919784546
+      },
+      "exact_board_accuracy": 0.0,
+      "square_accuracy_by_stage": {
+        "early": 0.822298526763916,
+        "middle": 0.5853820443153381,
+        "late": 0.4766911566257477
+      }
+    },
+    "untrained_gpt": {
+      "square_accuracy": 0.6499459743499756,
+      "balanced_accuracy": 0.6033374071121216,
+      "recall": {
+        "empty": 0.8663099408149719,
+        "mine": 0.3913499116897583,
+        "theirs": 0.5523523688316345
+      },
+      "exact_board_accuracy": 0.032337624579668045,
+      "square_accuracy_by_stage": {
+        "early": 0.8706656098365784,
+        "middle": 0.625006914138794,
+        "late": 0.5107884407043457
+      }
+    },
+    "trained_gpt": {
+      "square_accuracy": 0.7809301018714905,
+      "balanced_accuracy": 0.7321194211641947,
+      "recall": {
+        "empty": 0.9954201579093933,
+        "mine": 0.4858587384223938,
+        "theirs": 0.7150793671607971
+      },
+      "exact_board_accuracy": 0.09107460081577301,
+      "square_accuracy_by_stage": {
+        "early": 0.942645251750946,
+        "middle": 0.8062958121299744,
+        "late": 0.6439942121505737
+      }
+    }
+  }
+}

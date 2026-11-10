@@ -1,0 +1,53 @@
+{
+  "mode": "short",
+  "device": "mps",
+  "seed": 42,
+  "train_games": 24000,
+  "available_train_games": 24000,
+  "val_games": 768,
+  "steps": 2400,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "parameter_count": 111271,
+  "training_targets": 2572988,
+  "best_step": 2400,
+  "best_val_loss": 2.924105500969002,
+  "pilot_seconds": 8.27,
+  "training_seconds": 54.85,
+  "total_seconds": 56.63,
+  "data_sha256": "51477dd4f48d560f38dabde9ad04ba70acaa47f17d308bceb3a5d90e2899d281",
+  "validation": [
+    {
+      "step": 300,
+      "loss": 3.035622494668667
+    },
+    {
+      "step": 600,
+      "loss": 2.9830059108950073
+    },
+    {
+      "step": 900,
+      "loss": 2.9653840546792933
+    },
+    {
+      "step": 1200,
+      "loss": 2.946256273586741
+    },
+    {
+      "step": 1500,
+      "loss": 2.938993795258579
+    },
+    {
+      "step": 1800,
+      "loss": 2.932910644474259
+    },
+    {
+      "step": 2100,
+      "loss": 2.9268745873840114
+    },
+    {
+      "step": 2400,
+      "loss": 2.924105500969002
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "data_sha256": "51477dd4f48d560f38dabde9ad04ba70acaa47f17d308bceb3a5d90e2899d281",
+  "train_games": 24000,
+  "test": {
+    "counting": {
+      "all_moves": {
+        "positions": 95798,
+        "top1_legal": 0.4122737426668615,
+        "legal_mass": 0.24288510737908323
+      },
+      "early": {
+        "positions": 30000,
+        "top1_legal": 0.5994666666666667,
+        "legal_mass": 0.35813200100429265
+      },
+      "middle": {
+        "positions": 29989,
+        "top1_legal": 0.3944446296975558,
+        "legal_mass": 0.24992144082223236
+      },
+      "late": {
+        "positions": 35809,
+        "top1_legal": 0.27037895501131,
+        "legal_mass": 0.14044104548451866
+      },
+      "forced_pass": {
+        "positions": 1674,
+        "top1_legal": 0.0,
+        "legal_mass": 0.026789964975163352
+      },
+      "terminal": {
+        "positions": 3000,
+        "top1_legal": 0.33466666666666667,
+        "legal_mass": 0.05033328120606871
+      }
+    },
+    "full": {
+      "all_moves": {
+        "positions": 95798,
+        "top1_legal": 0.8222823023445166,
+        "legal_mass": 0.6573156660795231
+      },
+      "early": {
+        "positions": 30000,
+        "top1_legal": 0.9213666666666667,
+        "legal_mass": 0.7625826243301029
+      },
+      "middle": {
+        "positions": 29989,
+        "top1_legal": 0.7581446530394478,
+        "legal_mass": 0.5501881421114991
+      },
+      "late": {
+        "positions": 35809,
+        "top1_legal": 0.7929850037700019,
+        "legal_mass": 0.6588414994945774
+      },
+      "forced_pass": {
+        "positions": 1674,
+        "top1_legal": 0.15591397849462366,
+        "legal_mass": 0.2168035216812682
+      },
+      "terminal": {
+        "positions": 3000,
+        "top1_legal": 0.958,
+        "legal_mass": 0.9499334102661472
+      }
+    },
+    "short": {
+      "all_moves": {
+        "positions": 95798,
+        "top1_legal": 0.5863796738971586,
+        "legal_mass": 0.38502999444433705
+      },
+      "early": {
+        "positions": 30000,
+        "top1_legal": 0.8761333333333333,
+        "legal_mass": 0.6811522745726805
+      },
+      "middle": {
+        "positions": 29989,
+        "top1_legal": 0.5697088932608623,
+        "legal_mass": 0.3284746672541379
+      },
+      "late": {
+        "positions": 35809,
+        "top1_legal": 0.3575916668993828,
+        "legal_mass": 0.18430864794643378
+      },
+      "forced_pass": {
+        "positions": 1674,
+        "top1_legal": 0.0005973715651135006,
+        "legal_mass": 0.06846192856381142
+      },
+      "terminal": {
+        "positions": 3000,
+        "top1_legal": 0.4846666666666667,
+        "legal_mass": 0.20803491807891988
+      }
+    }
+  },
+  "stress": {
+    "counting": {
+      "all_moves": {
+        "positions": 31884,
+        "top1_legal": 0.4455839919708945,
+        "legal_mass": 0.24452454134583423
+      },
+      "early": {
+        "positions": 10000,
+        "top1_legal": 0.6162,
+        "legal_mass": 0.35822120262727625
+      },
+      "middle": {
+        "positions": 9995,
+        "top1_legal": 0.45032516258129063,
+        "legal_mass": 0.25445933958546607
+      },
+      "late": {
+        "positions": 11889,
+        "top1_legal": 0.29809067204979395,
+        "legal_mass": 0.14054061324257439
+      },
+      "forced_pass": {
+        "positions": 569,
+        "top1_legal": 0.0,
+        "legal_mass": 0.03034131573848139
+      },
+      "terminal": {
+        "positions": 1000,
+        "top1_legal": 0.418,
+        "legal_mass": 0.05494034827477865
+      }
+    },
+    "full": {
+      "all_moves": {
+        "positions": 31884,
+        "top1_legal": 0.8118178396687994,
+        "legal_mass": 0.64788512706588
+      },
+      "early": {
+        "positions": 10000,
+        "top1_legal": 0.9133,
+        "legal_mass": 0.752736920676136
+      },
+      "middle": {
+        "positions": 9995,
+        "top1_legal": 0.7378689344672336,
+        "legal_mass": 0.5370542065542225
+      },
+      "late": {
+        "positions": 11889,
+        "top1_legal": 0.7886281436622088,
+        "legal_mass": 0.6528676415255869
+      },
+      "forced_pass": {
+        "positions": 569,
+        "top1_legal": 0.1757469244288225,
+        "legal_mass": 0.22560608642176203
+      },
+      "terminal": {
+        "positions": 1000,
+        "top1_legal": 0.925,
+        "legal_mass": 0.9193668093336437
+      }
+    },
+    "short": {
+      "all_moves": {
+        "positions": 31884,
+        "top1_legal": 0.5953769915945302,
+        "legal_mass": 0.3847672108745539
+      },
+      "early": {
+        "positions": 10000,
+        "top1_legal": 0.8668,
+        "legal_mass": 0.6755125538524124
+      },
+      "middle": {
+        "positions": 9995,
+        "top1_legal": 0.583591795897949,
+        "legal_mass": 0.3309771925173448
+      },
+      "late": {
+        "positions": 11889,
+        "top1_legal": 0.37698713096139286,
+        "legal_mass": 0.18543823482120378
+      },
+      "forced_pass": {
+        "positions": 569,
+        "top1_legal": 0.0,
+        "legal_mass": 0.07140991953467567
+      },
+      "terminal": {
+        "positions": 1000,
+        "top1_legal": 0.522,
+        "legal_mass": 0.2230799268974224
+      }
+    }
+  },
+  "examples": {
+    "early-success": {
+      "history": [
+        "start",
+        "d5",
+        "e5",
+        "f5",
+        "d6",
+        "b3",
+        "f6"
+      ],
+      "placements": 6,
+      "raw_top": "e4",
+      "raw_top_probability": 0.7334797978401184,
+      "legal_moves": [
+        "e4",
+        "c5",
+        "e6"
+      ],
+      "legal_mass": 0.8851980017498136,
+      "recorded_next": "e6"
+    },
+    "late-failure": {
+      "history": [
+        "start",
+        "c2",
+        "b4",
+        "c5",
+        "d6",
+        "e4",
+        "d2",
+        "a4",
+        "c1",
+        "b6",
+        "d5",
+        "e1",
+        "e3",
+        "e6",
+        "a3",
+        "c6",
+        "b5",
+        "f2",
+        "a5",
+        "b3",
+        "e5",
+        "f6",
+        "a2",
+        "b1",
+        "d1",
+        "a6",
+        "f3",
+        "e2",
+        "f1",
+        "a1",
+        "f4"
+      ],
+      "placements": 30,
+      "raw_top": "f5",
+      "raw_top_probability": 0.9365765452384949,
+      "legal_moves": [
+        "b2"
+      ],
+      "legal_mass": 0.023258725181221962,
+      "recorded_next": "b2"
+    },
+    "forced-pass": {
+      "history": [
+        "start",
+        "c2",
+        "b2",
+        "d5",
+        "e3",
+        "e4",
+        "c1",
+        "b3",
+        "b4",
+        "e2",
+        "e5",
+        "b1",
+        "d2",
+        "d1",
+        "e6",
+        "c6",
+        "f4",
+        "c5",
+        "f3",
+        "f5",
+        "e1",
+        "f1",
+        "b6",
+        "b5",
+        "a2",
+        "a1",
+        "d6",
+        "f2",
+        "a3",
+        "a5",
+        "a6",
+        "a4"
+      ],
+      "placements": 31,
+      "raw_top": "f6",
+      "raw_top_probability": 0.9690978527069092,
+      "legal_moves": [
+        "pass"
+      ],
+      "legal_mass": 0.022693604230880737,
+      "recorded_next": "pass"
+    }
+  }
+}

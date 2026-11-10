@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Step through a game of Reversi and see what a tiny GPT learns from move sequences alone.">
+  <title>Reversi Lab — A tiny GPT learns the board</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23f5f1e6' stroke='%23103a2c' stroke-width='2'/%3E%3Cpath d='M6 26A14 14 0 0 1 26 6Z' fill='%23103a2c'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="replays.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#experiment">Skip to experiment</a>
+  <header class="masthead shell">
+    <a class="brand" href="index.html" aria-label="Reversi Lab home"><span class="brand-mark" aria-hidden="true"></span> REVERSI LAB</a>
+    <span class="masthead-note">MODEL STUDY / 01</span>
+  </header>
+
+  <main class="shell">
+    <div class="intro">
+      <div>
+        <p class="kicker"><span aria-hidden="true"></span> A SMALL LANGUAGE MODEL EXPERIMENT</p>
+        <h1>Can a tiny GPT<br>learn the board?</h1>
+      </div>
+      <p>Give a model only the moves from a game of Reversi. Then see where it predicts a legal move, where it gets stuck, and what changes when the rules step in.</p>
+    </div>
+
+    <section id="experiment" class="experiment" aria-label="Reversi experiment">
+      <div class="controlbar">
+        <div class="mode-picker" role="group" aria-label="Experiment mode">
+          <button id="replay-mode" type="button" aria-pressed="true">Recorded replays</button>
+          <button id="live-mode" type="button" aria-pressed="false">Live play</button>
+        </div>
+        <p class="source-tag"><span class="source-dot" aria-hidden="true"></span><span id="source-tag">RECORDED CHECKPOINT</span></p>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+      <div id="scenarios" class="scenarios" role="group" aria-label="Recorded example"></div>
+      <p id="scenario-description" class="scenario-description"></p>
+
+      <div class="bench">
+        <section class="playfield" aria-labelledby="board-heading">
+          <div class="section-header">
+            <h2 id="board-heading">The board</h2>
+            <span id="turn" class="turn"></span>
+          </div>
+          <div id="board" class="board" role="group" aria-label="6 by 6 Reversi board"></div>
+          <div class="legend">
+            <span><i class="legend-legal" aria-hidden="true"></i> Legal move</span>
+            <span><i class="legend-prediction" aria-hidden="true"></i> Top prediction</span>
+            <span><i class="legend-last" aria-hidden="true"></i> Last move</span>
+          </div>
+          <div class="timeline">
+            <button id="previous" class="arrow" type="button" aria-label="Previous position">←</button>
+            <div class="timeline-center">
+              <label for="seek" id="position-label">Position</label>
+              <input id="seek" type="range" min="0" max="0" value="0">
+            </div>
+            <button id="forward" class="arrow" type="button" aria-label="Next position">→</button>
+          </div>
+          <div class="board-actions">
+            <button id="special" class="action" type="button" hidden>Pass turn</button>
+            <button id="reset" class="action" type="button" hidden>New game</button>
+          </div>
+        </section>
+
+        <section class="inspector" aria-labelledby="predictions-heading">
+          <div class="section-header">
+            <h2 id="predictions-heading">Model predictions</h2>
+            <span class="mono inspector-count">TOP 5</span>
+          </div>
+          <label class="filter">
+            <span class="filter-copy"><strong>Filter illegal moves</strong><small id="filter-caption">Show the model’s raw probabilities.</small></span>
+            <input id="filter" type="checkbox" role="switch">
+          </label>
+          <ol id="predictions" class="predictions" aria-label="Ranked next moves"></ol>
+          <p id="prediction-status" class="prediction-status" aria-live="polite"></p>
+          <div class="mass">
+            <span class="mono">RAW PROBABILITY ON LEGAL MOVES</span>
+            <strong id="legal-mass">—</strong>
+            <div id="mass-bar" class="mass-bar" role="meter" aria-label="Raw probability on legal moves" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="mass-fill"></div></div>
+          </div>
+          <div class="history">
+            <h3>The model’s input</h3>
+            <p id="history"></p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="method" aria-labelledby="method-heading">
+      <p class="kicker"><span aria-hidden="true"></span> HOW TO READ THE EXPERIMENT</p>
+      <h2 id="method-heading">Two views of the same position.</h2>
+      <div class="method-grid">
+        <p><strong>The GPT gets a move list.</strong> It was trained from random weights on synthetic Reversi games. Each square is a token, like a word in autocomplete.</p>
+        <p><strong>The engine gets the board.</strong> It tracks the discs and knows the legal moves. Filtering removes illegal choices and rescales the remaining probabilities. It leaves the model’s weights alone.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <span>6 × 6 BOARD / 39 TOKENS</span>
+    <nav aria-label="Project links">
+      <a href="https://github.com/DARKNESTMUDIT/reversi-lab">Source</a>
+      <a href="https://github.com/DARKNESTMUDIT/reversi-lab/blob/main/CASE-STUDY.md">Case study</a>
+    </nav>
+  </footer>
+</body>
+</html>
